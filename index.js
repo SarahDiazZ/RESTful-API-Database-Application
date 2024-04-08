@@ -16,21 +16,25 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded());
 app.use(express.json());
 
+//Page that lets users enter title, genre, release date, and rating of a movie
 app.get("/form", function(req, res) {
     res.render("pages/form");
 });
 
+//lists all movies that were added into the database
 app.get("/theater", function(req, res) {
     movieModel.listAllMovies().then(function(movies) {
         res.render("pages/theater", {movies:movies});
     });
 });
 
+//Query: Searches for movies before a given date/year
 app.get("/before/:Release_Date", function(req, res) {
     movieModel.find({Release_Date: {$lt : req.params.Release_Date}}).then(function(movies) {
         res.render("pages/theater", {movies:movies});
     });
 });
+
 
 app.post('/movie', function(req, res) {
     console.log("Movie: " + JSON.stringify(req.body.movie));
