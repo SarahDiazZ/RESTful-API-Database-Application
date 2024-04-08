@@ -1,0 +1,15 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>Sarah's Theater: </h1>
+        <ul>
+            <% for(movie of movies) { %>
+                <li>
+                    <%= movie.Title + " " + movie.Genre + " " + movie.Release_Date + " " + movie.Rating %>
+                </li>
+            <% } %>
+        </ul>
+    </body>
+</html>
