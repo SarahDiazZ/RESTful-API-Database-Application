@@ -35,7 +35,7 @@ app.get("/before/:Release_Date", function(req, res) {
     });
 });
 
-
+//Lets user know if the movie was successfully entered into the database
 app.post('/movie', function(req, res) {
     console.log("Movie: " + JSON.stringify(req.body.movie));
     var newMovie = new movieModel(req.body.movie);

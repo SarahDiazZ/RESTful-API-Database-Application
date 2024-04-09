@@ -5,6 +5,7 @@
     <body>
         <h1>Sarah's Theater: </h1>
         <ul>
+            <!--Loops through the movies in the DB to display them in the theater page-->
             <% for(movie of movies) { %>
                 <li>
                     <%= movie.Title + " " + movie.Genre + " " + movie.Release_Date + " " + movie.Rating %>
